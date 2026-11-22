@@ -130,3 +130,6 @@ Roteiro de apresentação: cadastrar um exemplo explicitamente fictício, listar
 A arquitetura implementada é navegador → API REST → JPA → banco. O cadastro mínimo cobre parcialmente RF-06 (informações práticas) e RF-08 (manutenção de pontos) do documento. Não cumpre o requisito amplo de administração protegida: autenticação está fora desta primeira entrega. O servidor é destinado a demonstração local.
 
 Não há login, mapas, rotas, comentários, upload, referências bibliográficas estruturadas nem recursos offline. Os textos exigem revisão histórica externa. A exportação do Google Stitch não estava disponível; a interface aqui é demonstrativa e sua integração futura depende de inspeção do código exportado. O relatório final deve separar este recorte das funcionalidades planejadas e registrar somente os testes realmente executados. Grupo e prazo da atividade permanecem conforme o enunciado: três/quatro integrantes e 27/11/2026.
+
+## Integração contínua
+O workflow .github/workflows/testes.yml executa Maven verify com Java 21 a cada push e pull request. A suíte inclui 16 testes de integração e três testes de unidade do serviço. Os testes de unidade verificam atualização de registro existente e impedem gravação/exclusão quando o identificador não existe. Consulte a aba Actions do repositório para o resultado de cada execução.
